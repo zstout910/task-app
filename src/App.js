@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <button onClick={() => setShowForm(true)}>Create</button>
+      <button className="create-btn" onClick={() => setShowForm(true)}>Create List</button>
       {showForm && <CreateForm onAddCard={handleAddCard} onClose={() => setShowForm(false)} />}
       <div className="cards-container">
         {cards.map((card, index) => (

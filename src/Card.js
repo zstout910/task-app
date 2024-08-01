@@ -3,7 +3,7 @@ import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
-function Card({ title, items }) {
+function Card({ title, items, handleDelete }) {
   return (
     <div className="card">
       <h3>{title}</h3>
