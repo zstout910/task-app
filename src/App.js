@@ -4,6 +4,7 @@ import CreateForm from './CreateForm';
 import Card from './Card';
 import Navbar from './Navbar';
 import Filter from './Filter';
+import Footer from './Footer';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -24,6 +25,7 @@ function App() {
           <Card key={index} title={card.title} items={card.items} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

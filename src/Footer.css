@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #777777;
+    --secondary-color: #555555;
+    --tertiary-color: #333333;
+    --main-color: #e9d60b;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    text-align: center;
+    color: var(--main-color);
+    font-size: 14px;
+    line-height: 1.5;
+    border-top: 5px solid var(--tertiary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
