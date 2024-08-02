@@ -1,15 +1,27 @@
-
+:root {
+  --primary-color: #777777;
+  --secondary-color: #555555;
+  --tertiary-color: #333333;
+  --main-color: #e9d60b;
+}
 .card {
     margin-top: 20px;
     padding: 10px;
-    border: 5px solid #333333;
+    border: 5px solid var(--tertiary-color);
     border-radius: 15px;
     width: 300px;
     margin: 20px auto;
-    background-color: #555555;
+    background-color: var(--secondary-color);
     color: #fff;
     display:block;
     justify-content: space-between;
+  }
+
+  .title {
+    color: var(--main-color);
+    font-weight: bolder;
+    text-decoration: underline;
+    text-transform: uppercase;
   }
 
   .card-item {
@@ -24,13 +36,18 @@
   }
 
   .edit-btn {
-    background-color: #555555;
+    background-color: var(--secondary-color);
     border: none;
     color: #fff;
   }
   .edit-btn:hover {
-    color:rgb(0, 98, 255);
+    color:var(--main-color);
+    text-align: end;
   }
+
+.card-bottom {
+  text-align: right;
+}
 
   
   
