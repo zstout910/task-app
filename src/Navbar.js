@@ -7,7 +7,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-left">
         <img src={logo} alt="Logo" className="navbar-logo" />
-        <span className="navbar-title">Todo App</span>
+        <span className="navbar-title">TODO APP</span>
       </div>
       <div className="navbar-right">
         <a href="#task" className="navbar-link">Task Page</a>

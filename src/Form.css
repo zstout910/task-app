@@ -1,0 +1,65 @@
+:root {
+    --primary-color: #777777;
+    --secondary-color: #555555;
+    --tertiary-color: #333333;
+    --main-color: #e9d60b;
+  }
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-section {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 4px solid var(--tertiary-color);
+    background-color: var(--secondary-color);
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding: 10px;
+    color:#fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title-text {
+    border-radius: 10px;
+    border: 2px solid var(--tertiary-color);;
+}
+.item-text {
+    border-radius: 10px;
+    border: 2px solid var(--tertiary-color);;
+}
+
+.add-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: 4px solid var(--tertiary-color);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: 4px solid var(--tertiary-color);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+.add-btn:hover {
+    border: 4px solid  var(--main-color);
+  }
+
+.submit-btn:hover {
+    border: 4px solid  var(--main-color);
+  }
+  

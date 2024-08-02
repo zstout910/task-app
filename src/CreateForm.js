@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Form.css';
 
 function CreateForm({ onAddCard, onClose }) {
   const [title, setTitle] = useState('');
@@ -23,11 +24,12 @@ function CreateForm({ onAddCard, onClose }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="form-container">
+    <form className="form-section" onSubmit={handleSubmit}>
       <div>
         <label>
-          Title:
-          <input 
+         Name:
+          <input className='title-text' 
             type="text" 
             value={title} 
             onChange={(e) => setTitle(e.target.value)} 
@@ -40,7 +42,7 @@ function CreateForm({ onAddCard, onClose }) {
           <div key={index}>
             <label>
               Item {index + 1}:
-              <input 
+              <input className='item-text' 
                 type="text" 
                 value={item} 
                 onChange={(e) => handleItemChange(index, e.target.value)} 
@@ -49,12 +51,13 @@ function CreateForm({ onAddCard, onClose }) {
             </label>
           </div>
         ))}
-        <button type="button" onClick={handleAddItem}>
+        <button className='add-btn' type="button" onClick={handleAddItem}>
           Add Item
         </button>
       </div>
-      <button type="submit">Submit</button>
+      <button className='submit-btn' type="submit">Create</button>
     </form>
+    </div>
   );
 }
 
