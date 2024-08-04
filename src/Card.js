@@ -34,9 +34,9 @@ function Card({ id, title, items, handleDelete, updateCheckboxState, initialChec
         ))}
       </ul>
       <div className="card-bottom">
-        <button className="edit-btn">
+        <button className="edit-btn" onClick={() => handleDelete(id)}>
           <FontAwesomeIcon icon={faTrash} />
-        </button><br />
+        </button>
         {allChecked && <span className="completed-label">Completed</span>}
       </div>
     </div>

@@ -17,6 +17,13 @@ function App() {
     setCards([...cards, { id, title, items }]);
   };
 
+  const handleDeleteCard = (id) => {
+    setCards(cards.filter((card) => card.id !== id));
+    const newCheckboxStates = { ...checkboxStates };
+    delete newCheckboxStates[id];
+    setCheckboxStates(newCheckboxStates);
+  };
+
   const updateCheckboxState = (id, states) => {
     setCheckboxStates({
       ...checkboxStates,
@@ -55,6 +62,7 @@ function App() {
             items={card.items}
             updateCheckboxState={updateCheckboxState}
             initialCheckboxStates={checkboxStates[card.id]}
+            handleDelete={handleDeleteCard}
           />
         ))}
       </div>
