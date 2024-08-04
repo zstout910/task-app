@@ -77,7 +77,7 @@ function Profile() {
             required
           />
         </div>
-        <button type="submit">Submit</button>
+        <button className='contact-btn' type="submit">Submit</button>
       </form>
     </div>
     </div>
