@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CreateForm from './CreateForm';
 import Card from './Card';
 import Navbar from './Navbar';
 import Filter from './Filter';
 import Footer from './Footer';
+import Profile from './Profile';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -44,30 +46,39 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <Navbar />
-      <button className="create-btn" onClick={() => setShowForm(true)}>
-        Create List
-      </button>
-      {showForm && (
-        <CreateForm onAddCard={handleAddCard} onClose={() => setShowForm(false)} />
-      )}
-      <Filter setFilter={setFilter} />
-      <div className="cards-container">
-        {filteredCards.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            title={card.title}
-            items={card.items}
-            updateCheckboxState={updateCheckboxState}
-            initialCheckboxStates={checkboxStates[card.id]}
-            handleDelete={handleDeleteCard}
-          />
-        ))}
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <button className="create-btn" onClick={() => setShowForm(true)}>
+                Create List
+              </button>
+              {showForm && (
+                <CreateForm onAddCard={handleAddCard} onClose={() => setShowForm(false)} />
+              )}
+              <Filter setFilter={setFilter} />
+              <div className="cards-container">
+                {filteredCards.map((card) => (
+                  <Card
+                    key={card.id}
+                    id={card.id}
+                    title={card.title}
+                    items={card.items}
+                    updateCheckboxState={updateCheckboxState}
+                    initialCheckboxStates={checkboxStates[card.id]}
+                    handleDelete={handleDeleteCard}
+                  />
+                ))}
+              </div>
+            </>
+          } />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
