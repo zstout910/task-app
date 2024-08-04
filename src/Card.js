@@ -16,6 +16,8 @@ function Card({ id, title, items, handleDelete, updateCheckboxState, initialChec
     setCheckboxStates(newStates);
   };
 
+  const allChecked = checkboxStates.every((state) => state);
+
   return (
     <div className="card">
       <h3 className="title">{title}</h3>
@@ -34,7 +36,8 @@ function Card({ id, title, items, handleDelete, updateCheckboxState, initialChec
       <div className="card-bottom">
         <button className="edit-btn">
           <FontAwesomeIcon icon={faTrash} />
-        </button>
+        </button><br />
+        {allChecked && <span className="completed-label">Completed</span>}
       </div>
     </div>
   );
