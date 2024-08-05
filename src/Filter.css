@@ -17,3 +17,7 @@
     font-size: medium;
     font-weight: bold;
   }
+
+  .filter-btn:hover {
+    border: 4px solid var(--main-color);
+  }
