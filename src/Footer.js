@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = () => {    //footer at bottom with my name and 2024
     return (
       <footer className="footer">
         <div className="footer-content">

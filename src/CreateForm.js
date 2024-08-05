@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Form.css';
 
-function CreateForm({ onAddCard, onClose }) {
-  const [title, setTitle] = useState('');
-  const [items, setItems] = useState(['']);
+function CreateForm({ onAddCard, onClose }) {   //function to create form for new list
+  const [title, setTitle] = useState('');       //set title
+  const [items, setItems] = useState(['']);     //set items
 
-  const handleAddItem = () => {
+  const handleAddItem = () => {       //handles adding new items to list
     setItems([...items, '']);
   };
 
@@ -15,13 +15,13 @@ function CreateForm({ onAddCard, onClose }) {
     setItems(newItems);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {     //creates todo list when form is submitted
     e.preventDefault();
     onAddCard(title, items);
     setTitle('');
     setItems(['']);
     onClose();
-  };
+  };                                //uses info entered by user
 
   return (
     <div className="form-container">
@@ -59,6 +59,6 @@ function CreateForm({ onAddCard, onClose }) {
     </form>
     </div>
   );
-}
+}                               //creates card for new list 
 
 export default CreateForm;

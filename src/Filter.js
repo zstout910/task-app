@@ -1,7 +1,7 @@
 import React from 'react';
 import './Filter.css';
 
-const Filter = ({ setFilter }) => {
+const Filter = ({ setFilter }) => {     //filter btns for the filtering
   return (
     <div className="filter-section">
       <button className="filter-btn" onClick={() => setFilter('all')}>
@@ -15,6 +15,6 @@ const Filter = ({ setFilter }) => {
       </button>
     </div>
   );
-};
+};                                              //sets filter to selected filter
 
 export default Filter;

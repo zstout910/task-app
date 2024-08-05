@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';    //font awesome for delete icon
 
-function Card({ id, title, items, handleDelete, updateCheckboxState, initialCheckboxStates }) {
+function Card({ id, title, items, handleDelete, updateCheckboxState, initialCheckboxStates }) {     //sets up card funtion with card details
   const [checkboxStates, setCheckboxStates] = useState(initialCheckboxStates || items.map(() => false));
 
   useEffect(() => {
-    updateCheckboxState(id, checkboxStates);
+    updateCheckboxState(id, checkboxStates);            //for updating checkbox state
   }, [checkboxStates]);
 
-  const handleCheckboxChange = (index) => {
-    const newStates = [...checkboxStates];
+  const handleCheckboxChange = (index) => {       
+    const newStates = [...checkboxStates];        //updates checkbox state when changed
     newStates[index] = !newStates[index];
     setCheckboxStates(newStates);
   };
 
-  const allChecked = checkboxStates.every((state) => state);
+  const allChecked = checkboxStates.every((state) => state);    //if all checkboxes are checked
 
   return (
     <div className="card">
@@ -41,6 +41,6 @@ function Card({ id, title, items, handleDelete, updateCheckboxState, initialChec
       </div>
     </div>
   );
-}
+}                                     //when all checkboxes are checked, creates complete label on card
 
 export default Card;

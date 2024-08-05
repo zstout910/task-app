@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import './Profile.css';
 
 function Profile() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
+    const [formData, setFormData] = useState({    //sets up form for contact page
+        name: '',                     
+        email: '',                  //blank from fields
         subject: '',
         message: ''
       });
     
       const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target;   //updates form data to what was typed
         setFormData({
           ...formData,
           [name]: value
@@ -20,8 +20,8 @@ function Profile() {
       const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submit
-        console.log('Form submitted:', formData);
-        // Reset form
+        console.log('Form submitted:', formData);   //console logs information entered
+        // clears form after submit
         setFormData({
           name: '',
           email: '',
